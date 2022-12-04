@@ -1,0 +1,79 @@
+\section{color column}
+
+:set colorcolumn=80
+
+forma acortada:
+
+:set cc=80
+
+desactivar color column:
+
+:set cc=
+
+\section{pegar texto desde fuera de vim}
+
+"+p
+
+Esa combinación de letras estando en el modo normal, tambien hay otra forma
+estando con el teclado númerico desactivado. la tecla bloq num. luego copiar
+el texto desde fuere de vim luego estando dentro de vim en el modo normal
+
+:set paste
+
+luego presionar i para ingresar en el modo insertar para luego presionar
+la tecla Shift +  insert del teclado númerico.
+
+\section{.vimrc}
+
+Podemos ver que el archivo .vimrc antes de la version 9 tenia que ser
+escrito con un guion bajo en la version de vim para windows llamado gvim.
+
+\begin{lstlisting}
+":syntax on
+
+:set cc=80
+
+:colorscheme habamax
+
+:set number
+:set encoding=utf-8
+
+:set noundofile
+:set nobackup
+:set noswapfile
+
+:set ts=4 sw=4 sts=4
+:set autoindent
+:set backspace=2
+:set backspace=indent,eol,start
+
+inoremap " ""<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+
+"let g:user_emmet_mode='n' "Only enable normal mode functions.
+"let g:user_emmet_leader_key=','
+
+inoremap <c-b> <Esc>:Lex<cr>:vertical resize 30<cr>
+nnoremap <c-b> <Esc>:Lex<cr>:vertical resize 30<cr>
+
+nnoremap <c-s> :w<CR>
+nnoremap . :
+
+call plug#begin()
+Plug 'OmniSharp/omnisharp-vim'
+call plug#end()
+
+let g:OmniSharp_server_path = 'C:\omnisharp-vim\omnisharp-roslyn\OmniSharp.exe'
+
+filetype indent plugin on
+syntax enable
+
+let g:OmniSharp_server_use_net6 = 1
+
+let g:OmniSharp_highlighting = 3
+\end{lstlisting}
+
+Este archivo esta dentro del directorio de instalación c:/Program Files/vim
+pero los plugins estan en el directorio home, es decir que users/usuario/..

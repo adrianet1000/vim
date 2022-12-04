@@ -1,0 +1,51 @@
+\documentclass[letterpaper]{article}
+\usepackage{amsmath,amssymb,mathtools,nccmath}
+\usepackage[colorlinks = true, urlcolor = blue]{hyperref}
+\usepackage{graphicx}
+\usepackage{parskip}
+
+\usepackage{float}
+\graphicspath{{img/}}
+
+\usepackage[margin = 2 cm]{geometry}
+
+%setting font
+\usepackage{mathspec}
+\setmainfont{Arial}
+\setsansfont{Arial}
+\setmonofont{Arial}
+\setmathsfont(Digits,Latin)[Numbers={Lining,Proportional}]{Arial}
+\usepackage{xcolor}
+
+%\nofiles
+
+%color page number
+\let\oldthepage\thepage% Copy \thepage into \oldthepage
+\renewcommand{\thepage}{\color{white}\oldthepage}% Add colour to \page
+
+%listings
+
+\usepackage{listings}
+
+\lstset{
+basicstyle=\ttfamily,
+numbers=left,
+numberstyle=\tiny,
+numbersep=5pt,
+tabsize=4,
+stringstyle=\color{brown},
+showspaces=false,
+showtabs=false,
+commentstyle=\color{green},
+morecomment=[l]{"}, %use comment-line-style!
+showstringspaces=false,
+morekeywords={set, let
+  map, nmap,
+  filetype,
+  on, off,
+  autocmd,
+  Plugin,
+  call, },
+keywordstyle=\color{cyan},
+}
+
